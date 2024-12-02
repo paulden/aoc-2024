@@ -5,8 +5,6 @@ import (
 	"slices"
 )
 
-// Part 1
-
 func Part1(input [][]int) int {
 	leftList, rightList := GetLists(input)
 
@@ -21,8 +19,6 @@ func Part1(input [][]int) int {
 
 	return totalDistance
 }
-
-// Part 2
 
 func Part2(input [][]int) int {
 	leftList, rightList := GetLists(input)
