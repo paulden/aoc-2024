@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	input := utils.ReadIntegersInFile("assets/day1.txt")
+	input := utils.ReadMultipleIntegersPerLineInFile("assets/day01.txt")
 	day01Part1 := day01.Part1(input)
 	day01Part2 := day01.Part2(input)
 	fmt.Println("--- Day 1: Title ---")

@@ -6,8 +6,8 @@ import (
 )
 
 func TestDay01Part1(t *testing.T) {
-	input := utils.ReadIntegersInFile("testdata/input.txt")
-	expected := 1
+	input := utils.ReadMultipleIntegersPerLineInFile("testdata/input.txt")
+	expected := 11
 
 	result := Part1(input)
 
@@ -17,8 +17,8 @@ func TestDay01Part1(t *testing.T) {
 }
 
 func TestDay01Part2(t *testing.T) {
-	input := utils.ReadIntegersInFile("testdata/input.txt")
-	expected := 1
+	input := utils.ReadMultipleIntegersPerLineInFile("testdata/input.txt")
+	expected := 31
 
 	result := Part2(input)
 
