@@ -3,8 +3,10 @@ package main
 import (
 	"aoc-2024/internal/day01"
 	"aoc-2024/internal/day02"
+	"aoc-2024/internal/day03"
 	"aoc-2024/internal/pkg/utils"
 	"fmt"
+	"strings"
 )
 
 func main() {
@@ -20,4 +22,10 @@ func main() {
 	fmt.Println("--- Day 2: Red-Nosed Reports ---")
 	fmt.Printf("Part 1: %v\n", day02Part1)
 	fmt.Printf("Part 2: %v\n", day02Part2)
+	inputDay03 := strings.Join(utils.ReadStringsInFile("assets/day03.txt"), "")
+	day03Part1 := day03.Part1(inputDay03)
+	day03Part2 := day03.Part2(inputDay03)
+	fmt.Println("--- Day 3: Mull It Over ---")
+	fmt.Printf("Part 1: %v\n", day03Part1)
+	fmt.Printf("Part 2: %v\n", day03Part2)
 }
