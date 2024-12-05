@@ -5,6 +5,7 @@ import (
 	"aoc-2024/internal/day02"
 	"aoc-2024/internal/day03"
 	"aoc-2024/internal/day04"
+	"aoc-2024/internal/day05"
 	"aoc-2024/internal/pkg/utils"
 	"fmt"
 	"strings"
@@ -35,4 +36,10 @@ func main() {
 	fmt.Println("--- Day 4: Ceres Search ---")
 	fmt.Printf("Part 1: %v\n", day04Part1)
 	fmt.Printf("Part 2: %v\n", day04Part2)
+	inputDay05 := utils.ReadStringsInFile("assets/day05.txt")
+	day05Part1 := day05.Part1(inputDay05)
+	day05Part2 := day05.Part2(inputDay05)
+	fmt.Println("--- Day 5: Print Queue ---")
+	fmt.Printf("Part 1: %v\n", day05Part1)
+	fmt.Printf("Part 2: %v\n", day05Part2)
 }
