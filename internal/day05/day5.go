@@ -1,7 +1,6 @@
 package day05
 
 import (
-	"fmt"
 	"slices"
 	"strconv"
 	"strings"
@@ -19,7 +18,6 @@ func Part1(input []string) int {
 			middlePageSum += pagesUpdate[len(pagesUpdate)/2]
 		}
 	}
-	fmt.Println(pageOrderingRules)
 	return middlePageSum
 }
 
