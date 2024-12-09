@@ -9,6 +9,7 @@ import (
 	"aoc-2024/internal/day06"
 	"aoc-2024/internal/day07"
 	"aoc-2024/internal/day08"
+	"aoc-2024/internal/day09"
 	"aoc-2024/internal/pkg/utils"
 	"fmt"
 	"strings"
@@ -63,4 +64,10 @@ func main() {
 	fmt.Println("--- Day 8: Resonant Collinearity ---")
 	fmt.Printf("Part 1: %v\n", day08Part1)
 	fmt.Printf("Part 2: %v\n", day08Part2)
+	inputDay09 := utils.ReadStringsInFile("assets/day09.txt")
+	day09Part1 := day09.Part1(inputDay09)
+	day09Part2 := day09.Part2(inputDay09)
+	fmt.Println("--- Day 9: Disk Fragmenter ---")
+	fmt.Printf("Part 1: %v\n", day09Part1)
+	fmt.Printf("Part 2: %v\n", day09Part2)
 }
