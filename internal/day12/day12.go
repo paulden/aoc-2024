@@ -66,7 +66,7 @@ func (p *plot) GetPerimeter() int {
 }
 
 func (p *plot) GetSides() int {
-	sides := 0.0
+	sides := 0
 	for plant := range p.plants {
 		topPlant := p.plants[coordinates{plant.x - 1, plant.y}]
 		topLeftPlant := p.plants[coordinates{plant.x - 1, plant.y - 1}]
@@ -77,51 +77,17 @@ func (p *plot) GetSides() int {
 		rightPlant := p.plants[coordinates{plant.x, plant.y + 1}]
 		topRightPlant := p.plants[coordinates{plant.x - 1, plant.y + 1}]
 
-		leftPlantSharesTopBorder := leftPlant && !topLeftPlant
-		rightPlantSharesTopBorder := rightPlant && !topRightPlant
-		leftPlantSharesBottomBorder := leftPlant && !bottomLeftPlant
-		rightPlantSharesBottomBorder := rightPlant && !bottomRightPlant
-		topPlantSharesLeftBorder := topPlant && !topLeftPlant
-		bottomPlantSharesLeftBorder := bottomPlant && !bottomLeftPlant
-		topPlantSharesRightBorder := topPlant && !topRightPlant
-		bottomPlantSharesRightBorder := bottomPlant && !bottomRightPlant
-
-
-		if !topPlant {
-			if !leftPlantSharesTopBorder && !rightPlantSharesTopBorder {
-				sides += 1
-			} else if leftPlantSharesTopBorder && rightPlantSharesTopBorder {
-				sides += 0
-			} else {
-				sides += 0.5
-			}
+		if topPlant && leftPlant && !topLeftPlant || !topPlant && !leftPlant {
+			sides++
 		}
-		if !bottomPlant {
-			if !leftPlantSharesBottomBorder && !rightPlantSharesBottomBorder {
-				sides += 1
-			} else if leftPlantSharesBottomBorder && rightPlantSharesBottomBorder {
-				sides += 0
-			} else {
-				sides += 0.5
-			}
+		if topPlant && rightPlant && !topRightPlant || !topPlant && !rightPlant {
+			sides++
 		}
-		if !leftPlant {
-			if !topPlantSharesLeftBorder && !bottomPlantSharesLeftBorder {
-				sides += 1
-			} else if topPlantSharesLeftBorder && bottomPlantSharesLeftBorder {
-				sides += 0
-			} else {
-				sides += 0.5
-			}
+		if bottomPlant && leftPlant && !bottomLeftPlant || !bottomPlant && !leftPlant {
+			sides++
 		}
-		if !rightPlant {
-			if !topPlantSharesRightBorder && !bottomPlantSharesRightBorder {
-				sides += 1
-			} else if topPlantSharesRightBorder && bottomPlantSharesRightBorder {
-				sides += 0
-			} else {
-				sides += 0.5
-			}
+		if bottomPlant && rightPlant && !bottomRightPlant || !bottomPlant && !rightPlant {
+			sides++
 		}
 
 	}
