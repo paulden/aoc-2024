@@ -14,6 +14,7 @@ import (
 	"aoc-2024/internal/day11"
 	"aoc-2024/internal/day12"
 	"aoc-2024/internal/day13"
+	"aoc-2024/internal/day14"
 	"aoc-2024/internal/pkg/utils"
 	"flag"
 	"fmt"
@@ -116,6 +117,13 @@ func main() {
 		fmt.Println("--- Day 13: Claw Contraption ---")
 		fmt.Printf("Part 1: %v\n", day13Part1)
 		fmt.Printf("Part 2: %v\n", day13Part2)
+	case 14:
+		inputDay14 := utils.ReadStringsInFile("assets/day14.txt")
+		day14Part1 := day14.Part1(inputDay14, 103, 101)
+		day14Part2 := day14.Part2(inputDay14)
+		fmt.Println("--- Day 14: Restroom Redoubt ---")
+		fmt.Printf("Part 1: %v\n", day14Part1)
+		fmt.Printf("Part 2: %v\n", day14Part2)
 
 	}
 }
